@@ -27,12 +27,6 @@ jobs:
       - name: Run tests
         run: pytest
 
-      - name: Generate HTML report
-        if: always()
-        run: |
-          mkdir report
-          pytest --html=report\report-$(Get-Date -Format "yyyyMMdd-HHmmss").html
-
       - name: Upload report artifacts
         if: always()
         uses: actions/upload-artifact@v2
