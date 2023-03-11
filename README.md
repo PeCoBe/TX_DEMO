@@ -83,3 +83,13 @@ The test cases are located in project/tests. Each subdirectory represents a scen
 
 ## Reports
 This project uses pytest-html to generate HTML reports. Reports are stored in the report folder with a unique name for each run. The name is in the format of report-{datetime}.html. The datetime is in the format of YYYYMMDD-HHMMSS.
+
+## Known bugs
+- When logs output contains Japanese characters. Command to automatically generate logs is disabled, under /conftest.py.
+To create reports manually, can be run using
+```
+# The encode argument is already set in pytest.ini file
+pytest --html=report.html
+# or 
+pytest --html=report.html --self-contained-html
+```
