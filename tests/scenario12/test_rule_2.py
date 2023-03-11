@@ -4,7 +4,7 @@ import yaml
 
 
 def open_files():
-    path_to = 'tests/scenario12'
+    path_to = 'tests/scenario12/'
     # Path for the current and new version files
     current_version_path = os.path.join(path_to, "current_version.yaml")
     new_version_path = os.path.join(path_to, "new_version.yaml")
@@ -36,4 +36,7 @@ def test_rule_2():
     
     (current_version, new_version, expected_version) = open_files()
 
+    print(current_version)
+    print(new_version)
+    print(expected_version)
     assert current_version == expected_version

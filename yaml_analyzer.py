@@ -128,6 +128,7 @@ try:
         logging.info("Updating current version...")
         current_version = yaml.dump(current_version_copy, file, allow_unicode=True, sort_keys=False, default_flow_style=False)
         logging.info('Current version updated! ありがとう~! (￣︶￣)')
+        print('Current version updated! ありがとう~! (￣︶￣)')
 except FileNotFoundError:
     logging.error("File not found")
     sys.exit(1)

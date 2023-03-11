@@ -4,9 +4,9 @@ aaa:
     yyy: 2342
     zzz: 2342
   ddd: 20
-eee: true
-hhh: true
-ttt: true
+eee: True
+hhh: True
+ttt: True
 
 error_msgs:
   impossible_move:
