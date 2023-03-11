@@ -2,10 +2,20 @@
 ## Introduction
 This is a YAML Analyzer tool that analyzes YAML files according to specific rules.
 
+## Requirements
+- Python 3 or higher installed and added to the system path.
+- PowerShell execution policy set to RemoteSigned (Windows only). To set the execution policy, run PowerShell as an administrator and enter the following command:
+```
+Set-ExecutionPolicy RemoteSigned
+```
+- Pip installed to manage Python packages. To install Pip, download get-pip.py and run the following command:
+```
+python get-pip.py
+```
 ## Installation
 1. Clone the repo from GitHub:
 ```bash
-git clone https://github.com/your_username/your_repo.git
+git clone https://github.com/PeCoBe/TX_DEMO.git
 ```
 2. Navigate to the project directory:
 ```bash
