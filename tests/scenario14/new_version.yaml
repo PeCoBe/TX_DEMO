@@ -1,0 +1,16 @@
+aaa:
+  bbb:
+    ccc: 80
+    yyy: 2342
+    zzz: 2342
+  ddd: 20
+eee: 10
+hhh: 666
+ttt: 0.1654
+
+in_current: false
+
+error_msgs:
+  impossible_move:
+    jp: "Not found"
+    en: "Not found"

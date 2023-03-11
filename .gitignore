@@ -1,5 +1,7 @@
 # Ignore the virtual environment directory
 env/
+# Ignore the report folder
+report/
 
 # Ignore Python bytecode files
 *.pyc

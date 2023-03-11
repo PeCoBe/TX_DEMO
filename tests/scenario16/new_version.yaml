@@ -1,0 +1,15 @@
+aaa:
+  bbb:
+    ccc: 651
+    yyy: 31
+    zzz: 123
+  ddd: 46
+eee: 78
+hhh: 94
+ttt: .01
+
+error_msgs:
+  impossible_move:
+    jp: "ロボットは要求された動作を行うことができません"
+    en: "Robot cannot perform the requested move"
+    es: "Robot no puede realizar la accion solicitada"

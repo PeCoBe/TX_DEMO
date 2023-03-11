@@ -1,0 +1,15 @@
+aaa:
+  bbb:
+    ccc: 80
+    yyy: 2342
+    zzz: 2342
+  ddd: 20
+eee: true
+hhh: true
+ttt: true
+
+error_msgs:
+  impossible_move:
+    jp: "Characters not found"
+    en: "Robot cannot perform the requested move"
+    es: "Robot no puede realizar el movimiento solicitado"

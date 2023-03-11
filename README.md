@@ -1,85 +1,75 @@
-# Software QA Test Engineer Assignment
+# YAML Analyzer
+## Introduction
+This is a YAML Analyzer tool that analyzes YAML files according to specific rules.
 
-## Context:
+## Installation
+1. Clone the repo from GitHub:
+```bash
+git clone https://github.com/your_username/your_repo.git
+```
+2. Navigate to the project directory:
+```bash
+cd your_repo
+```
+3. Create a virtual environment (optional but recommended):
+```bash
+python -m venv env
+```
+Activate the virtual environment:
+```bash
+source env/bin/activate # for Linux/MacOS
+env\Scripts\activate.bat # for Windows
+```
+4. Install dependencies:
+```bash
+pip install -r requirements.txt
+```
+## Usage
+The main code is located in project/yaml_analyzer.py and can be run with the following command:
 
-As a Software Test Engineer, you will create test scripts to assess the functional
-quality of robot components. That requires you to have the ability to evaluate a
-feature to design relevant tests.
+```bash
+python project/yaml_analyzer.py [-h] [--rule4] [--rule5] [--log-level LOG_LEVEL] [--path-to PATH_TO]
+```
 
-This assignment aims to evaluate some of the following technical requirements:
-- Coding skill
-- Testing skill
+Examples:
+```bash
+# Run with default rules with input files in current dir:
+python yaml_analyzer.py
 
+# Run with default rules, specifying location of input files:
+python yaml_analyzer.py --path-to my/inputs
 
-## Assignment
+# Run applying optional rule 4
+python yaml_analyzer.py --rule4
 
-Create an application that takes as an input two YAML files, `current_version`
-and `new_version`, and updates `current_version` as follows:
-- If a field of `new_version` is not present in `current_version`, it should be
-  added to `current_version` with its value set to the value from `new_version`.
-- If a field of `new_version` is present in `current_version`, it should keep the
-  value from `current_version`.
-- If a field of `current_version` is not present in `new_version`, it should be
-  removed from `current_version`.
+# Run applying optional rule 5
+python yaml_analyzer.py --rule5
 
-In addition, the user can use optional arguments to:
-- Force the update of `current_version` by only replacing the values of the
-  currently existing fields with the values from `new_version`
-- Force the update of `current_version` by replacing the values of the currently
-  existing fields with the values from `new_version` and adding or removing the
-  fields according  to the requirement mentioned above.
+# Run with different logging levels
+python yaml_analyzer.py --log-level info
+```
 
-Your application must be compatible with the provided `config.yaml`. We will use
-similar config files for the evaluation. You are free to create additional yaml
-files for your development or tests.
+Here are the available arguments:
 
-Your application must provide feedback to the user via a logger. The user can
-change the logging level by providing optional arguments. The error messages must
-be explicit enough for a non-developer to understand the problem.
+-h: show help message and exit.
+--rule4: enable rule 4 analysis.
+--rule5: enable rule 5 analysis.
+--log-level: set logging level (options: debug, info, warning, error, critical).
+--path-to: specify path to YAML file for analysis.
 
-In addition, you must provide tests that will assess the correct behaviour of the
-application. Your tests should, at least, verify all the requirements listed above.
+## Running Tests
+This project uses pytest to run the tests. To run the tests, simply run the following command in the project root directory:
+```bash
+# Run all tests
+pytest
 
-Finally, you must provide a way to install the application and all its dependencies
-and the documentation explaining how to use it.
+# Run specific scenario
+pytest tests/scenarioN
 
-Coding requirement:
-- You must use Python (3.8 or more recent) for both the application and the tests
-- You must use a test framework such as [Pytest](https://docs.pytest.org/)
-- The documentation must be provide as a README
+# Run scenario, setting log level
+pytest tests/scenarioN --log-level info
+```
+The test cases are located in project/tests. Each subdirectory represents a scenario, and each subdirectory contains three files: current_version, new_version, and expected_version.
 
-Note:
-- You can use any yaml library such as [PyYaml](https://pyyaml.org/wiki/PyYAML)
-- You can use any logging library such as [daiquiri](https://daiquiri.readthedocs.io/en/latest/)
-
-
-We expected the test to takes about 2~4 hours to complete the assignment.
-
-
-## How to submit
-
-Your work needs to be available on a public repository. We should be able to
-install your application, its dependency, and we can run your application from a
-terminal.
-
-
-##  Evaluation
-
-We will clone the repository and install the application in our test environment.
-After analyzing your code, we will run your provided tests and the tests we have
-prepared.
-
-Your work will be evaluated according to the following criterias (list non-exhaustive):
-- The quality of your code, its clarity, its explicitness, and its structure
-- Does the applications meet all the requirements
-- The test coverage
-- How easy the install of the application is
-- How user-friendly is the application to use
-- The quality of the documentation
-
-> _Important note regarding the test coverage_:
->
-> We know that it is possible to create a multitude of tests of a single
-> application. Focus on the essential tests that you will find relevant and avoid
-> testing strange corner cases.
-
+## Reports
+This project uses pytest-html to generate HTML reports. Reports are stored in the report folder with a unique name for each run. The name is in the format of report-{datetime}.html. The datetime is in the format of YYYYMMDD-HHMMSS.

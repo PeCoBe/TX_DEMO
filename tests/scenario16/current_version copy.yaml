@@ -1,0 +1,16 @@
+aaa:
+  bbb:
+    ccc: .00006
+    yyy: .00006
+    zzz: .00006
+  ddd: .00006
+eee: .00006
+hhh: .00006
+ttt: .00006
+
+current_value: true
+
+error_msgs:
+  impossible_move:
+    jp: ロボットは要求された動作を行うことができません
+    en: Robot cannot perform the requested move
